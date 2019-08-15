@@ -1,18 +1,25 @@
-body  { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; }
+body  { 
+  font-family:Verdana, Geneva, sans-serif;
+  font-size:10pt;
+  color:#002b36;
+  background: #002b36;
+  max-width: 960px;
+  margin: auto;
+}
 td    { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; }
 
-.admin td   { font-family:Verdana, Geneva, sans-serif; font-size:8.5pt; color:#000000; }
+.admin td   { font-family:Verdana, Geneva, sans-serif; font-size:8.5pt; color:#2E3440; }
 .subtext td { font-family:Verdana, Geneva, sans-serif; font-size:  7pt; color:#828282; }
 
 input    { font-family:monospace; font-size:10pt; }
 input[type=\"submit\"] { font-family:Verdana, Geneva, sans-serif; }
 textarea { font-family:monospace; font-size:10pt; }
 
-a:link    { color:#000000; text-decoration:none; }
+a:link    { color:#5E81AC; text-decoration:none; }
 a:visited { color:#828282; text-decoration:none; }
 
 .default { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
-.admin   { font-family:Verdana, Geneva, sans-serif; font-size:8.5pt; color:#000000; }
+.admin   { font-family:Verdana, Geneva, sans-serif; font-size:8.5pt; color:#2E3440; }
 .title   { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
 .subtext { font-family:Verdana, Geneva, sans-serif; font-size:  7pt; color:#828282; }
 .yclinks { font-family:Verdana, Geneva, sans-serif; font-size:  8pt; color:#828282; }
@@ -25,7 +32,7 @@ a:visited { color:#828282; text-decoration:none; }
 .noshow { display: none; }
 .nosee { visibility: hidden; pointer-events: none; cursor: default }
 
-.c00, .c00 a:link { color:#000000; }
+.c00, .c00 a:link { color:#2E3440; }
 .c5a, .c5a a:link, .c5a a:visited { color:#5a5a5a; }
 .c73, .c73 a:link, .c73 a:visited { color:#737373; }
 .c82, .c82 a:link, .c82 a:visited { color:#828282; }
@@ -36,7 +43,7 @@ a:visited { color:#828282; text-decoration:none; }
 .cce, .cce a:link, .cce a:visited { color:#cecece; }
 .cdd, .cdd a:link, .cdd a:visited { color:#dddddd; }
 
-.pagetop a:visited { color:#000000;}
+.pagetop a:visited { color:#2E3440;}
 .topsel a:link, .topsel a:visited { color:#ffffff; }
 
 .subtext a:link, .subtext a:visited { color:#828282; }

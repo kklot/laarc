@@ -10,19 +10,19 @@
 (load "firebase.arc")
 (load "algolia.arc")
 
-(= site-name*    "laarc"
-   site-abbrev*  "LN"
-   site-email*   "hi@@laarc.io"
-   site-twitter* "theshawwn"
-   site-discord* "shawwn#3694"
-   discord-url*  "https://discord.gg/qaqkc9z"
-   site-url*     "https://www.laarc.io"
-   parent-url*   "https://www.laarc.io"
+(= site-name*    "tin.tips"
+   site-abbrev*  "tintips"
+   site-email*   "fieeuvaan@@gmail.com"
+   ; site-twitter* "theshawwn"
+   ; site-discord* "shawwn#3694"
+   ; discord-url*  "https://discord.gg/qaqkc9z"
+   site-url*     "https://www.tin.tips"
+   parent-url*   "https://www.tin.tips"
    welcome-url*  "/welcome.html"
    favicon-url*  ""
    site-desc*    "Links for the curious"     ; for rss feed
-   site-color*   (color 154 186 170)
-   border-color* (color 154 186 170)
+   site-color*   (color 235 203 139)
+   border-color* (color 235 203 139)
    prefer-url*   t)
 
 
@@ -569,25 +569,28 @@
   (center
     (hook 'longfoot)
     (w/bars
-      (link "Welcome" welcome-url*)
-      (link "Guidelines" "/guidelines.html")
-      (link "Bookmarklet" "/bookmarklet.html")
-      (link "Feature Requests" "/item?id=230")
-      (link "Source" "https://github.com/laarc/laarc")
-      (link "Contact" "mailto:@site-email*")
-      (link "Twitter" "https://twitter.com/@site-twitter*")
-      (link "Lists" "/lists"))
+      (link "Chào mừng" welcome-url*)
+      (link "Hướng dẫn" "/guidelines.html")
+      (link "Thêm vào màn hình" "/bookmarklet.html")
+      ; (link "Feature Requests" "/item?id=230")
+      ; (link "Source" "https://github.com/laarc/laarc")
+      (link "Liên hệ" "mailto:@site-email*")
+      ; (link "Twitter" "https://twitter.com/@site-twitter*")
+      (link "Danh mục" "/lists")
+      (link "RSS (Chủ đề)" "/rss")
+      (link "RSS (Ý kiến)" "/rsscomments"))
     (br2)
-    (w/bars
-      (link "RSS (stories)" "/rss")
-      (link "RSS (comments)" "/rsscomments"))
-    (search-bar user elapsed whence)
-    (admin-bar user elapsed whence)))
+    ; (w/bars
+    ;   (link "RSS (stories)" "/rss")
+    ;   (link "RSS (comments)" "/rsscomments"))
+    ; (search-bar user elapsed whence)
+    ; (admin-bar user elapsed whence)
+    ))
 
-(def search-bar (user elapsed whence)
-  (br2)
-  (tag (form method "get" action "//search.laarc.io/")
-    (inputs (q Search 17 nil 'plain))))
+; (def search-bar (user elapsed whence)
+;   (br2)
+;   (tag (form method "get" action "//search.laarc.io/")
+;     (inputs (q Search 17 nil 'plain))))
 
 (defcache memusage 5
   (repeat 3 (seval!collect-garbage 'major))
@@ -683,7 +686,7 @@ function vote(node) {
 
 ; Page top
 
-(= sand (color 246 246 239) textgray (gray 130))
+(= sand (color 254 246 225) textgray (gray 130))
 
 (def main-color (user)
   (aif (and user (uvar user topcolor))
@@ -716,23 +719,23 @@ function vote(node) {
       (tag (img src logo-url* width 18 height 18
                 style "border:1px #@(hexrep border-color*) solid;")))))
 
-(= toplabels* '(nil "welcome" "new" "threads" "comments" "discord"
-                    "/l/show" "show" "/l/ask" "ask" "/l/place" "place" "*"))
+(= toplabels* '(nil "welcome" "new" "threads" "comments"
+                    "/l/show" "show" "/l/ask" "ask" "/l/jobs" "jobs" "*"))
 
 ; redefined later
 
 (def toprow (user label)
   (w/bars
-    (toplink "new" "/newest" label)
+    (toplink "news" "/newest" label)
     (when user
       (toplink "threads" (threads-url user) label))
-    (toplink "comments" "/newcomments" label)
-    (toplink "discord"  discord-url* label)
+    (toplink "comment" "/newcomments" label)
+    ; (toplink "discord"  discord-url* label)
     (hook 'toprow user label)
-    (link "tags" "/l")
+    ; (link "tags" "/l")
     (toplink "ask" "/l/ask" (if (is label "/l/ask") "ask" label))
     (toplink "show" "/l/show" (if (is label "/l/show") "show" label))
-    (toplink "place" "/l/place" (if (is label "/l/place") "place" label))
+    (toplink "jobs" "/l/jobs" (if (is label "/l/jobs") "jobs" label))
     (link "submit" "/submit")
     (unless (mem label toplabels*)
       (fontcolor white (pr:eschtml label)))))
@@ -1557,7 +1560,7 @@ function vote(node) {
     (pr " (@(num it 1 t t))")))
 
 (= admin-color* darkblue
-   noob-color* (color 60 150 60)
+   noob-color* (color 133 153 0)
    noob-time* (* 4 1440)) ; 4 days
 
 (def user-name (user subject)
