@@ -15,9 +15,9 @@
    site-email*   "fieeuvaan@@gmail.com"
    site-twitter* ""
    site-discord* ""
-   discord-url*  "https://www.tin.tips"
-   site-url*     "https://www.tin.tips"
-   parent-url*   "https://www.tin.tips"
+   discord-url*  "https://tin.tips"
+   site-url*     "https://tin.tips"
+   parent-url*   "https://tin.tips"
    welcome-url*  "/welcome.html"
    favicon-url*  ""
    site-desc*    "Links for the curious"     ; for rss feed
